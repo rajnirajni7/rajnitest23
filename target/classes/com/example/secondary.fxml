@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane xmlns:fx="http://javafx.com/fxml" fx:controller="com.example.SecondaryController" prefWidth="600" prefHeight="400">
+    <VBox spacing="10" alignment="CENTER" AnchorPane.topAnchor="0" AnchorPane.bottomAnchor="0" AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0">
+        <padding>
+            <Insets top="20" right="20" bottom="20" left="20"/>
+        </padding>
+
+        <Label text="Student CRUD" style="-fx-font-size: 22px; -fx-font-weight: bold;" />
+
+        <HBox spacing="10" alignment="CENTER">
+            <TextField fx:id="txtName" promptText="Name" />
+            <TextField fx:id="txtEmail" promptText="Email" />
+            <TextField fx:id="txtPhone" promptText="Phone" />
+        </HBox>
+
+        <HBox spacing="10" alignment="CENTER">
+            <Button text="Add" onAction="#handleAdd"/>
+            <Button text="Update" onAction="#handleUpdate"/>
+            <Button text="Delete" onAction="#handleDelete"/>
+            <Button text="Clear" onAction="#handleClear"/>
+        </HBox>
+
+        <TableView fx:id="tableView" prefHeight="250" prefWidth="550">
+            <columns>
+                <TableColumn fx:id="colName" text="Name" prefWidth="150"/>
+                <TableColumn fx:id="colEmail" text="Email" prefWidth="200"/>
+                <TableColumn fx:id="colPhone" text="Phone" prefWidth="150"/>
+            </columns>
+        </TableView>
+    </VBox>
+</AnchorPane>
